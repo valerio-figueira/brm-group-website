@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@400;700&family=Roboto:wght@100;300;400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root{
+    --color1: #001C3B;
+    --color2: #266CAA;
+    --color3: #0186B3;
+    --color4: #005076;
+    --color5: #009637;
+    --color6: #3CC86F;
+    --color8: #4987C7;
+    --color9: #46ff90;
+    --color10: #0a2646;
+    --color11: #83ffdc;
+    --white: #FFFFFF;
+}
+
+
+*{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: .3s linear;
+    box-sizing: border-box;
+}
+
+
+body{
+    position: relative;
+}
+
+/* HEADER */
+header{
+    position: absolute;
+    top: 0; left: 0; right: 0;
+
+    z-index: 1001;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #001b3b8f, #00517693);
+    padding: 0 7%;
+}
+header .logo-container img{
+    display: flex;
+    height: 65px;
+}
+
+
+
+
+
+
+
+
+
+/* NAVBAR */
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    height: 70px;
+    gap: 1rem;
+}
+.navbar a{
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    font-size: 1.3rem;
+    border-bottom: 3px solid transparent;
+}
+.navbar a:hover{
+    color: var(--color6);
+    border-bottom: 3px solid var(--color6);
+}
+
+
+.login{
+    color: var(--white);
+    background: var(--color5);
+    padding: .5rem;
+    border-radius: 7px;
+    border: 2px solid transparent;
+}
+.login:hover{
+    border: 2px solid #46ff90;
+}
+
+
+
+
+
+/* MAIN CONTAINER */
+/*CSS HERE*/
+
+
+
+
+
+
+
+/* INTRODUCTION SECTION */
+
+section.introduction{
+    position: relative;
+}
+section.introduction .box{
+    position: absolute;
+    top: 55%;
+    z-index: 1000;
+
+    transform: translateY(-50%);
+    width: 60%;
+
+    margin: 0 7%;
+
+    border-radius: 7px;
+}
+section.introduction .box h1{
+    position: relative;
+    font-family: 'Montserrat', sans-serif;;
+    color: var(--white);
+    font-size: 4.2rem;
+    font-weight: 900;
+}
+section.introduction .box h1::before{
+    content: "// BRM Group";
+    position: absolute;
+    font-family: 'Ubuntu', sans-serif;
+    top: -2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color9);
+}
+section.introduction .box p{
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    line-height: 2.2rem;
+    width: 80%;
+}
+
+
+
+
+
+
+
+/* MEDIA CONTAINER */
+.media-container{
+    position: relative;
+    overflow: hidden;
+    
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+
+    height: 100vh;
+}
+.media-container::before{
+    content: "";
+    background: #13314198;
+    position: absolute;
+    z-index: 15;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+.media-container video{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+section.introduction .btn{
+    display: inline-block;
+    color: var(--white);
+    background-color: var(--color5);
+
+    font-size: 1.5rem;
+
+    padding: 1rem;
+    margin: 2rem 0 0;
+    border: 3px solid transparent;
+}
+section.introduction .btn:hover{
+    background-color: var(--color4);
+    border: 3px solid var(--color5);
+}
+
+
+
+
+
+
+
+
+
+/* ABOUT CONTAINER */
+.about-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--color1);
+    color: var(--white);
+    padding: 4rem 7%;
+}
+
+.about-container article.box{
+    position: relative;
+    margin: 1rem 2.5rem;
+    padding: 2.5rem;
+    border: 1px solid var(--color3);
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px 3px #00c8ff3c;
+}
+.about-container article.box:hover{
+    transform: scale(1.07);
+    box-shadow: 0px 0px 20px 3px #00c8ff3c;
+}
+.about-container article.box h2.title{
+    position: relative;
+    font-size: 2rem;
+    padding: .5rem;
+}
+.about-container article.box p.paragraph{
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 300;
+    padding: 1rem .5rem 1rem;
+}
+
+.about-container article.box:nth-of-type(1) h2.title::before{
+    content: "// BRM Group";
+    position: absolute;
+    top: -1.2rem;
+    font-size: 1rem;
+    color: var(--color9);
+}
+.about-container article.box:nth-of-type(2) h2.title::before{
+    content: "// A Empresa";
+    position: absolute;
+    top: -1.2rem;
+    font-size: 1rem;
+    color: var(--color9);
+}
+.about-container article.box .icon{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 80px;
+}
+
+
+
+
+
+
+
+/* SERVICES CONTAINER */
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    background-color: var(--color10);
+    color: var(--white);
+
+    padding: 4rem 7%;
+}
+.services-container > h2.title{
+    /*APPLIES SPAN COLUMN TO GRID LAYOUT*/
+    grid-column: 1/-1;
+    position: relative;
+    font-size: 2.3rem;
+    text-align: center;
+    padding: 1.5rem;
+}
+.services-container > h2.title::before{
+    position: absolute;
+    top: 0rem;
+    content: "// Nossos Serviços";
+    font-size: 1rem;
+    color: var(--color9);
+}
+.services-container article.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 1rem 1.5rem 2rem;
+    margin: 2rem 1rem;
+
+    border: 1px solid var(--color3);
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px 3px #00c8ff3c;
+
+    min-height: 350px;
+}
+.services-container article.box:hover{
+    transform: scale(1.07);
+    box-shadow: 0px 0px 20px 3px #00c8ff3c;
+}
+.services-container article.box h3.title{
+    color: var(--color11);
+    margin-bottom: 1rem;
+}
+.services-container article.box p.paragraph{
+    line-height: 1.5rem;
+    font-weight: 400;
+}
+.services-container article.box .scores{
+    display: flex;
+    justify-content: center;
+    gap: .3rem;
+    color: #ffb901;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+.services-container article.box .picture-container{
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.services-container article.box img.picture{
+    transform: scale(1);
+    display: flex;
+    height: 100%;
+}
+
+
+
+
+
+
+
+
+/* COMPANY CONTAINER */
+.company-container{
+    display: flex;
+    flex-direction: column;
+
+    padding: 4rem 7%;
+
+    background-image: url(../imgs/bg-map.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.company-container h2.title{
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--color10);
+}
+.company-container article.box{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+
+    padding: 2rem 7%;
+    margin-top: 2rem;
+    background-color: #ffffff83;
+}
+.company-container article.box img{
+    width: 250px;
+}
+.company-container article.box p.paragraph{
+    color: var(--color1);
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    padding-left: 2rem;
+}
+.company-container article.box .know-more{
+    display: block;
+
+    font-size: 1.5rem;
+    color: var(--white);
+    background-color: var(--color1);
+
+    width: 150px;
+    padding: 1rem;
+    margin: 2rem 0 0;
+    border: 3px solid transparent;
+}
+.company-container article.box .know-more:hover{
+    background-color: var(--color5);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1250px) {
+    .media-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .media-container video{
+        height: 100%;
+        width: auto;
+    }
+}
