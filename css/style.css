@@ -13,6 +13,7 @@
     --color3: #4987C7;
     --white: #FFFFFF;
     --lightgray: #e3e3e3;
+    --mobile: 360px;
 }
 
 
@@ -28,6 +29,7 @@
 
 body{
     position: relative;
+    min-width: var(--mobile);
 }
 
 /* HEADER */
@@ -144,7 +146,7 @@ section.introduction .box p{
     color: var(--lightgray);
     font-size: 1.5rem;
     margin-top: 1.5rem;
-    line-height: 2.2rem;
+    line-height: 2rem;
     width: 80%;
 }
 section.introduction .box h1 > span.destaque{
@@ -230,7 +232,7 @@ section.introduction .btn:hover{
 /* ABOUT CONTAINER */
 .about-container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     background-color: var(--prime-color);
     color: var(--white);
     padding: 4rem 7%;
@@ -299,26 +301,19 @@ section.introduction .btn:hover{
     grid-column: 1/-1;
     position: relative;
     padding: 1.5rem;
-    width: 70%;
     margin: auto;
 }
 .services-container .title-container > h2.title{
-    font-size: 3.3rem;
-    text-align: center;
+    font-size: 3.5rem;
+    text-align: left;
     padding-top: .5rem;
-}
-.services-container .title-container > h2.title::before{
-    position: absolute;
-    top: 0rem;
-    content: "// Nossos Serviços";
-    font-size: 1rem;
-    color: var(--lightgreen);
+    margin-bottom: 1.5rem;
 }
 /* SOME CSS TAGS */
 .services-container .tag-container{
-    position: absolute;
-    top: 0;
-    left: 18rem;
+    display: flex;
+    flex-direction: row;
+    gap: .3rem;
     color: var(--white);
 }
 .services-container .tag{
@@ -326,8 +321,12 @@ section.introduction .btn:hover{
     border-radius: 5px;
     padding: .2rem .3rem;
     color: var(--white);
+    font-size: .9rem;
 }
-
+.services-container .tag:hover{
+    border: 1px solid var(--lightgreen);
+    color: var(--lightgreen);
+}
 
 .services-container article.box{
     display: flex;
@@ -359,37 +358,6 @@ section.introduction .btn:hover{
     line-height: 1.5rem;
     font-weight: 400;
 }
-
-
-/*
-.services-container article.box .picture-container{
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-    z-index: -1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-100%);
-    transition: .2s linear;
-}
-
-.services-container article.box .picture-container::before{
-    content: "";
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-    z-index: 20;
-    background: #000000d0;
-}
-.services-container article.box:hover .picture-container{
-    transform: translateY(0);
-}
-.services-container article.box img.picture{
-    transform: scale(1);
-    display: flex;
-    height: 100%;
-}
-*/
 
 
 .services-container article.box:hover{
@@ -465,11 +433,79 @@ section.introduction .btn:hover{
 
 
 
+/* CONTACT FORM CSS */
+.contact-container{
+    display: flex;
+    justify-content: center;
+    padding: 4rem 7%;
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+.contact-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
+    background-color: var(--prime-color);
+    border: 1px solid var(--lightgreen);
 
+    min-width: 350px;
+    max-width: 500px;
 
+    padding: 2.5rem 3.5rem;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 20px 0px #83ffdc36;
+}
+.contact-container form h2.title{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
 
+/* TAGS INSIDE H2*/
+.contact-container form h2 .tag-container{
+    font-size: .8rem;
+    margin-bottom: .7rem;
+}
+.contact-container form h2 .tag{
+    padding: .5rem;
+    border: 1px solid white;
+    border-radius: 7px;
+}
+.contact-container form h2 .tag:hover{
+    border: 1px solid var(--lightgreen);
+    color: var(--lightgreen);
+}
 
+/* FORM / INPUTS CSS */
+.contact-container form input, .contact-container form textarea{
+    font-size: 1rem;
+    margin: .7rem 0;
+    padding: 1rem;
+    outline: 2px solid transparent;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+}
+.contact-container form input:focus, .contact-container form textarea:focus{
+    outline: 2px solid var(--second-blue);
+}
+.contact-container form textarea{
+    resize: none;
+}
+.contact-container form button{
+    cursor: pointer;
+    border: none;
+    background-color: var(--lightgreen);
+    color: var(--prime-color);
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+}
+.contact-container form button:hover{
+    background-color: var(--second-light-green);
+}
 
 
 
@@ -521,6 +557,16 @@ footer.footer-container a:hover{
 
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 1350px) {
+    section.introduction .box{
+        width: 70%;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .about-container{
+        padding: 4rem 3%;
+    }
+}
 @media screen and (max-width: 1250px) {
     .media-container{
         display: flex;
@@ -531,5 +577,67 @@ footer.footer-container a:hover{
     .media-container video{
         height: 100%;
         width: auto;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .about-container article.box{
+        padding: 2.5rem 1rem;
+        margin: 1rem;
+    }
+    section.introduction .box h1, section.introduction .box h1 > span.destaque{
+        font-size: 3rem;
+    }
+}
+@media screen and (max-width: 1100px){
+    .services-container{
+        padding: 4rem 3%;
+    }
+}
+@media screen and (max-width: 900px){
+    section.introduction .box p{
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+}
+@media screen and (max-width: 800px){
+    section.introduction .box{
+        width: 80%;
+    }
+
+    section.introduction .box h1, section.introduction .box h1 > span.destaque{
+        font-size: 2.5rem;
+    }
+
+    section.introduction .box .tag-container{
+        position: absolute;
+        top: -1.7rem;
+        left: 10rem;
+    }    
+
+    .services-container .title-container h2.title{
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width: 600px){
+    section.introduction .box h1::before{
+        content: "";
+    }
+    section.introduction .box .tag-container{
+        position: absolute;
+        top: -1.7rem;
+        left: 0rem;
+    }
+}
+@media screen and (max-width: 500px){
+    section.introduction .box{
+        width: 90%;
+    }
+    section.introduction .box span.tag{
+        font-size: .8rem;
+    }
+}
+@media screen and (max-width: 450px){
+    section.introduction .box{
+        width: 100%;
     }
 }
