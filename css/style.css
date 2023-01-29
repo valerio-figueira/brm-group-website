@@ -16,6 +16,10 @@
     --mobile: 360px;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 
 *{
     font-family: 'Ubuntu', sans-serif;
@@ -47,7 +51,7 @@ header{
 }
 header .logo-container img{
     display: flex;
-    height: 65px;
+    height: 60px;
 }
 
 
@@ -290,7 +294,7 @@ section.introduction .btn:hover{
 /* SERVICES CONTAINER */
 .services-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     background-color: var(--dark-blue);
     color: var(--white);
 
@@ -313,6 +317,7 @@ section.introduction .btn:hover{
 .services-container .tag-container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: .3rem;
     color: var(--white);
 }
@@ -424,7 +429,7 @@ section.introduction .btn:hover{
 }
 .company-container article.box img{
     position: absolute;
-    left: -5rem;
+    left: -8rem;
     top: 35%;
     transform: translateY(-50%);
 
@@ -511,8 +516,6 @@ section.introduction .btn:hover{
 
 
 /* FOOTER CSS */
-footer.footer-container *{
-}
 footer.footer-container{
     display: flex;
     flex-direction: column;
@@ -549,7 +552,12 @@ footer.footer-container a{
 footer.footer-container a:hover{
     color: var(--lightgreen);
 }
-
+footer.footer-container .dev-info{
+    margin-top: 1rem;
+}
+footer.footer-container .dev-info a{
+    color: var(--second-light-green);
+}
 
 
 
@@ -592,6 +600,13 @@ footer.footer-container a:hover{
     .services-container{
         padding: 4rem 3%;
     }
+
+    .company-container article.box img{
+        display: none;
+    }
+    .company-container article.box{
+        width: auto;
+    }
 }
 @media screen and (max-width: 900px){
     section.introduction .box p{
@@ -627,6 +642,29 @@ footer.footer-container a:hover{
         top: -1.7rem;
         left: 0rem;
     }
+
+    /* ICON INSIDE ABOUT SECTION */
+    .about-container article.box .icon{
+        display: none;
+    }
+
+    /* COMPANY CONTAINER PADDING */
+    section.company-container{
+        padding: 4rem 3%;
+    }
+    .company-container article.box{
+        padding: 2rem 0;
+    }
+}
+@media screen and (max-width: 560px) {
+    .about-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .about-container article.box p.paragraph{
+        font-size: 1rem;
+        line-height: 1.7rem;
+    }
 }
 @media screen and (max-width: 500px){
     section.introduction .box{
@@ -635,9 +673,56 @@ footer.footer-container a:hover{
     section.introduction .box span.tag{
         font-size: .8rem;
     }
+
+    .services-container .title-container > h2.title{
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    .company-container article.box p.paragraph{
+        font-size: 1rem;
+        line-height: 1.7rem;
+    }
+
+
+    /* FORM RESPONSIVE CSS */
+    .contact-container form h2.title{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    .contact-container form{    
+        padding: 2.5rem;
+    }
 }
 @media screen and (max-width: 450px){
     section.introduction .box{
         width: 100%;
+    }
+
+    .contact-container form{    
+        padding: 2.5rem 1.5rem;
+    }
+}
+
+
+
+
+/* FOOTER RESPONSIVE */
+@media screen and (max-width: 700px) {
+    footer.footer-container{
+        font-size: 1rem;
+        padding: 5rem 3%;
+    }
+}
+@media screen and (max-width: 500px){
+    footer.footer-container{
+        font-size: 1rem;
+        padding: 5rem 0;
+        text-align: center;
+        line-height: 1.7rem;
+    }
+
+    footer.footer-container .block{
+        display: block;
     }
 }

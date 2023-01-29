@@ -44,17 +44,58 @@ function setIntroductionText(){
     `;
 
     container[1].children[1].innerHTML = `
-    Somos formados por princípios de integridade, ética e respeito ao ser humano. Por este motivo, estamos todos compromissados com estes valores. Nossos serviços são reconhecidos pela <span class="destaque">qualidade</span>, <span class="destaque">segurança</span> e <span class="destaque">agilidade</span> ao cliente. A BRM Group é composta por especialistas renomados na área de tecnologia, soluções digitais e contabilidade. Desenvolvemos aplicações que dão segurança e que supram aos interesses de nossos clientes.
+    Somos formados por princípios de integridade, ética e respeito ao ser humano. Por este motivo, estamos todos compromissados com estes valores. Nossos serviços são reconhecidos pela <span class="destaque">qualidade</span>, <span class="destaque">segurança</span> e <span class="destaque">agilidade</span> ao cliente. A BRM Group é composta por especialistas renomados na área de <span class="destaque">tecnologia</span>, <span class="destaque">soluções digitais</span> e <span class="destaque">contabilidade</span>. Desenvolvemos aplicações que dão segurança e que supram aos interesses de nossos clientes. Temos amor pelo que fazemos.
     `;
 }
 
 
 
 
-setCopyright()
-function setCopyright(){
+setCopyrightAndDevInfo()
+function setCopyrightAndDevInfo(){
     const container = document.querySelector(".copyright");
     const year = new Date().getFullYear();
 
     container.innerHTML = `BRM Group - Direitos autorais &copy; ${year}`;
+
+    const developerTag = document.querySelector(".dev-info");
+
+    const anchor = createAnchor("Valerio Figueira", "https://valerio-figueira.github.io/portfolio/");
+    const icon = createSpanTagIcon("fa fa-external-link-square");
+
+    developerTag.innerHTML = `Desenvolvido por `;
+    
+    anchor.prepend(icon);
+    developerTag.appendChild(anchor);
+
+
+    const portfoliumLink = document.querySelector(".dev-info a");
+
+    portfoliumLink.addEventListener("mouseout", () => {
+        portfoliumLink.firstElementChild.style.display = "none";
+    })
+
+    portfoliumLink.addEventListener("mouseenter", () => {
+        portfoliumLink.firstElementChild.style.display = "inline";
+    })
 }
+
+function createSpanTagIcon(iconString){
+    const icon = document.createElement("span");
+    icon.className = iconString + " icon";
+    icon.style.margin = "0 .3rem";
+
+    return icon;
+}
+
+function createAnchor(string, url){
+    const anchor = document.createElement("a");
+    anchor.innerHTML = string;
+    anchor.href = url;
+    anchor.rel = "external";
+    anchor.target = "_blank";
+
+    return anchor;
+}
+
+
