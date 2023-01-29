@@ -71,20 +71,22 @@ header .logo-container img{
     border-bottom: 3px solid transparent;
 }
 .navbar a:hover{
-    color: var(--color6);
-    border-bottom: 3px solid var(--color6);
+    color: var(--color9);
+    border-bottom: 3px solid var(--color9);
 }
 
 
 .login{
-    color: var(--white);
-    background: var(--color5);
+    color: var(--color1);
+    background: var(--color9);
     padding: .5rem;
     border-radius: 7px;
     border: 2px solid transparent;
 }
 .login:hover{
-    border: 2px solid #46ff90;
+    border: 2px solid var(--color11);
+    background: transparent;
+    color: var(--color11);
 }
 
 
@@ -117,7 +119,7 @@ section.introduction .box{
 
     border-radius: 7px;
 }
-section.introduction .box h1{
+section.introduction .box h1, section.introduction h1 > span.destaque{
     position: relative;
     font-family: 'Montserrat', sans-serif;;
     color: var(--white);
@@ -140,10 +142,28 @@ section.introduction .box p{
     line-height: 2.2rem;
     width: 80%;
 }
+section.introduction .box h1 > span.destaque{
+    color: var(--color9);
+    font-size: 4.7rem;
+}
+section.introduction .box span.tag{
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: .5rem;
+    border: 1px solid var(--white);
 
-
-
-
+    color: var(--white);
+    padding: .3rem;
+}
+section.introduction .box span.tag:hover{
+    color: var(--color9);
+    border: 1px solid var(--color9);
+}
+section.introduction .box .tag-container{
+    position: absolute;
+    top: -1.7rem;
+    left: 12rem;
+}
 
 
 
@@ -160,7 +180,7 @@ section.introduction .box p{
 }
 .media-container::before{
     content: "";
-    background: #13314198;
+    background: #133141c5;
     position: absolute;
     z-index: 15;
     top: 0; left: 0; bottom: 0; right: 0;
@@ -178,18 +198,20 @@ section.introduction .box p{
 
 section.introduction .btn{
     display: inline-block;
-    color: var(--white);
-    background-color: var(--color5);
+    color: var(--color1);
+    background-color: var(--color9);
 
     font-size: 1.5rem;
 
     padding: 1rem;
     margin: 2rem 0 0;
     border: 3px solid transparent;
+    border-radius: 1rem;
 }
 section.introduction .btn:hover{
-    background-color: var(--color4);
-    border: 3px solid var(--color5);
+    color: var(--color9);
+    background-color: transparent;
+    border: 3px solid var(--color9);
 }
 
 
@@ -238,20 +260,20 @@ section.introduction .btn:hover{
     position: absolute;
     top: -1.2rem;
     font-size: 1rem;
-    color: var(--color9);
+    color: var(--color11);
 }
 .about-container article.box:nth-of-type(2) h2.title::before{
     content: "// A Empresa";
     position: absolute;
     top: -1.2rem;
     font-size: 1rem;
-    color: var(--color9);
+    color: var(--color11);
 }
 .about-container article.box .icon{
     position: absolute;
     top: 1rem;
     right: 1rem;
-    width: 80px;
+    height: 70px;
 }
 
 
@@ -273,7 +295,7 @@ section.introduction .btn:hover{
     /*APPLIES SPAN COLUMN TO GRID LAYOUT*/
     grid-column: 1/-1;
     position: relative;
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     text-align: center;
     padding: 1.5rem;
 }
@@ -282,7 +304,7 @@ section.introduction .btn:hover{
     top: 0rem;
     content: "// Nossos Serviços";
     font-size: 1rem;
-    color: var(--color9);
+    color: var(--color11);
 }
 .services-container article.box{
     display: flex;
@@ -306,6 +328,7 @@ section.introduction .btn:hover{
     box-shadow: 0px 0px 20px 3px #00c8ff3c;
 }
 .services-container article.box h3.title{
+    font-size: 1.5em;
     color: var(--color11);
     margin-bottom: 1rem;
 }
@@ -313,30 +336,43 @@ section.introduction .btn:hover{
     line-height: 1.5rem;
     font-weight: 400;
 }
-.services-container article.box .scores{
-    display: flex;
-    justify-content: center;
-    gap: .3rem;
-    color: #ffb901;
-    font-size: 1.3rem;
-    margin-top: 1rem;
-}
 
 .services-container article.box .picture-container{
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
-    z-index: 10;
+    z-index: -1;
 
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateY(-100%);
+    transition: .2s linear;
+}
+
+.services-container article.box .picture-container::before{
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: 20;
+    background: #000000d0;
+}
+.services-container article.box:hover .picture-container{
+    transform: translateY(0);
 }
 .services-container article.box img.picture{
     transform: scale(1);
     display: flex;
     height: 100%;
 }
-
+/*
+.services-container article.box:hover{
+    background-color: var(--color4);
+}
+*/
+.services-container article.box .icon{
+    margin-top: 1rem;
+    height: 80px;
+}
 
 
 
@@ -392,6 +428,13 @@ section.introduction .btn:hover{
 .company-container article.box .know-more:hover{
     background-color: var(--color5);
 }
+
+
+
+
+
+
+
 
 
 
