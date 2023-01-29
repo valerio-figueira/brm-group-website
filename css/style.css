@@ -34,6 +34,7 @@ html{
 body{
     position: relative;
     min-width: var(--mobile);
+    min-height: 580px;
 }
 
 /* HEADER */
@@ -704,6 +705,9 @@ footer.footer-container .dev-info .icon{
         width: 45px;
     }
 }
+
+/* INTRODUCTION RESPONSIVE */
+
 @media screen and (max-width: 500px){
     section.introduction .box{
         width: 90%;
@@ -743,6 +747,30 @@ footer.footer-container .dev-info .icon{
 }
 
 
+
+/* INTRODUCTION RESPONSIVE */
+@media screen and (max-height: 650px){
+    section.introduction .box{
+        width: auto;
+    }
+    section.introduction .box h1, section.introduction .box h1 > span.destaque{
+        font-size: 2rem;
+    }
+    section.introduction .box p{
+        font-size: .9rem;
+    }
+
+    section.introduction .btn{
+        display: inline-block;
+        color: var(--prime-color);
+        background-color: var(--second-light-green);
+    
+        font-size: 1rem;
+    
+        padding: 1rem;
+        margin: 1rem 0 0;
+    }
+}
 
 
 
