@@ -170,7 +170,7 @@
                     <input type="text" id="nome" name="nome" required placeholder="Comece com seu nome..." aria-label="Seu nome" title="Digite seu nome aqui" minlength="10">
                 </div>
                 <div class="box">
-                    <input type="email" id="email" name="email" required placeholder="Seu email..." aria-label="Seu email" title="Digite seu e-mail aqui" pattern=".+@.+.com" minlength="12">
+                    <input type="email" id="email" name="email" required placeholder="Digite seu email..." aria-label="Seu email" title="Digite seu e-mail aqui" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" minlength="12">
                 </div>
                 <textarea id="message" rows="7" name="message" placeholder="Sua mensagem..." aria-label="Sua mensagem" maxlength="500"></textarea>
                 <button type="submit">Solicitar Contato</button>
