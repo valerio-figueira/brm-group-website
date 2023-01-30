@@ -773,6 +773,12 @@ footer.footer-container .dev-info .icon{
 
 
 /* INTRODUCTION RESPONSIVE */
+@media screen and (max-height: 680px){
+    section.introduction .box h1, section.introduction .box h1 > span.destaque{
+        font-size: 3.5rem;
+    }
+}
+
 @media screen and (max-height: 630px){
     section.introduction .box{
         width: auto;
@@ -794,11 +800,6 @@ footer.footer-container .dev-info .icon{
     
         padding: 1rem;
         margin: 1rem 0 0;
-    }
-}
-@media screen and (max-height: 680px){
-    section.introduction .box h1, section.introduction .box h1 > span.destaque{
-        font-size: 3.5rem;
     }
 }
 
