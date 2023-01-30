@@ -82,6 +82,10 @@ span.destaque{
 p.paragraph span.destaque{
     font-weight: 700;
 }
+p.paragraph span.destaque-2{
+    font-weight: 700;
+    color: var(--second-light-green);
+}
 
 
 
