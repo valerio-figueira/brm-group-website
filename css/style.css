@@ -468,7 +468,6 @@ section.introduction .btn:hover{
     color: var(--blue);
     font-size: 1.4rem;
     line-height: 2.2rem;
-    padding-left: 2rem;
 }
 .company-container article.box .know-more{
     display: inline-block;
