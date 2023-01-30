@@ -331,14 +331,13 @@ section.introduction .btn:hover{
 
     padding: 4rem 7%;
 }
-.services-container .title-container{
+.services-container > h2.title{
     /*APPLIES SPAN COLUMN TO GRID LAYOUT*/
     grid-column: 1/-1;
     position: relative;
     padding: 1.5rem;
     margin: auto;
-}
-.services-container .title-container > h2.title{
+
     font-size: 3.5rem;
     text-align: left;
     padding-top: .5rem;
@@ -349,10 +348,17 @@ section.introduction .btn:hover{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: center;
     gap: .3rem;
     color: var(--white);
 }
 .services-container .tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 30px;
+
     border: 1px solid var(--white);
     border-radius: 5px;
     padding: .2rem .3rem;
@@ -662,7 +668,7 @@ footer.footer-container .dev-info .icon{
         left: 10rem;
     }    
 
-    .services-container .title-container h2.title{
+    .services-container h2.title{
         font-size: 2.5rem;
     }
 }
@@ -716,9 +722,19 @@ footer.footer-container .dev-info .icon{
         font-size: .8rem;
     }
 
-    .services-container .title-container > h2.title{
-        font-size: 2rem;
+    .services-container > h2.title{
+        font-size: 1.6rem;
         line-height: 2.5rem;
+    }
+    .services-container .tag-container{
+        margin: 0; padding: 0;
+    }
+    .services-container .tag{
+        border: 1px solid var(--white);
+        border-radius: 5px;
+        padding: .2rem .3rem;
+        color: var(--white);
+        font-size: .9rem;
     }
 
     .company-container article.box p.paragraph{
@@ -741,6 +757,14 @@ footer.footer-container .dev-info .icon{
         width: 100%;
     }
 
+    .login{
+        font-size: .8rem;
+        font-weight: bold;
+        padding: .5rem;
+        border-radius: 7px;
+        border: 2px solid transparent;
+    }
+
     .contact-container form{    
         padding: 2.5rem 1.5rem;
     }
@@ -754,10 +778,11 @@ footer.footer-container .dev-info .icon{
         width: auto;
     }
     section.introduction .box h1, section.introduction .box h1 > span.destaque{
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     section.introduction .box p{
         font-size: .9rem;
+        margin-top: 1rem;
     }
 
     section.introduction .btn{
@@ -850,7 +875,11 @@ footer.footer-container .dev-info .icon{
         height: 50px;
     }
 }
-
+@media screen and (max-width: 450px) {
+    header .logo-container img{
+        height: 45px;
+    }
+}
 
 
 

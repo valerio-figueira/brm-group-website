@@ -51,7 +51,7 @@ function createFiveStarScore(container){
     return container;
 }
 
-if(path.match("/index.html")){
+if(document.querySelector(".about-container")){
     setIntroductionText();
 }
 
