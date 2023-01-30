@@ -14,6 +14,7 @@
     --white: #FFFFFF;
     --lightgray: #e3e3e3;
     --mobile: 360px;
+    --min-height: 580px;
 }
 
 html{
@@ -34,7 +35,7 @@ html{
 body{
     position: relative;
     min-width: var(--mobile);
-    min-height: 580px;
+    min-height: var(--min-height);
 }
 
 /* HEADER */
@@ -148,6 +149,7 @@ header .mobile-btn{
 
 section.introduction{
     position: relative;
+    min-height: var(--min-height);
 }
 section.introduction .box{
     position: absolute;
@@ -219,6 +221,7 @@ section.introduction .box .tag-container{
     align-items: center;
 
     height: 100vh;
+    min-height: var(--min-height);
 }
 .media-container::before{
     content: "";
@@ -775,7 +778,7 @@ footer.footer-container .dev-info .icon{
 /* INTRODUCTION RESPONSIVE */
 @media screen and (max-height: 680px){
     section.introduction .box h1, section.introduction .box h1 > span.destaque{
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 }
 
