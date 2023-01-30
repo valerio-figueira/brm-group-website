@@ -117,3 +117,43 @@ function createAnchor(string, url){
 
     return anchor;
 }
+
+
+
+
+if(document.querySelector("#contact")){
+    const nameInput = document.querySelector("#nome");
+    const regex = /[0-9]/;
+    const redColor = "#ffcece";
+    const whiteColor = "#FFFFFF";
+
+    // name form validation
+    nameInput.addEventListener('keypress', (e) => {
+        if(e.target.value.length > 40){
+            e.preventDefault();
+        }
+        if(regex.test(e.key)){
+            e.preventDefault();
+            nameInput.style.backgroundColor = redColor;
+        }
+    })
+    nameInput.addEventListener("focusout", (e) => {
+        e.target.style.backgroundColor = whiteColor;
+    })
+
+    // emmail form validation
+    const emailInput = document.querySelector("#email");
+    const emailRegex = /[A-z]/;
+
+    emailInput.addEventListener('keypress', (e) => {
+        if(e.target.value.length > 40){
+            e.preventDefault();
+        }
+    })
+
+    emailInput.addEventListener("focusout", (e) => {
+        e.target.style.backgroundColor = whiteColor;
+    })
+
+    
+}

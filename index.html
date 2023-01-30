@@ -166,9 +166,13 @@
 
                     Está pronto para ter <span class="destaque">projetos únicos</span> com nossa equipe?
                 </h2>
-                <input type="text" id="nome" name="nome" required placeholder="Comece com seu nome..." aria-label="Seu nome" title="Digite seu nome aqui">
-                <input type="email" id="email" name="email" required placeholder="Seu email..." aria-label="Seu email" title="Digite seu e-mail aqui">
-                <textarea id="message" rows="7" name="message" placeholder="Sua mensagem..." aria-label="Sua mensagem"></textarea>
+                <div class="box">
+                    <input type="text" id="nome" name="nome" required placeholder="Comece com seu nome..." aria-label="Seu nome" title="Digite seu nome aqui" minlength="10">
+                </div>
+                <div class="box">
+                    <input type="email" id="email" name="email" required placeholder="Seu email..." aria-label="Seu email" title="Digite seu e-mail aqui" pattern=".+@.+.com" minlength="12">
+                </div>
+                <textarea id="message" rows="7" name="message" placeholder="Sua mensagem..." aria-label="Sua mensagem" maxlength="500"></textarea>
                 <button type="submit">Solicitar Contato</button>
             </form>
         </section>

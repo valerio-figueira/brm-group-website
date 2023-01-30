@@ -540,6 +540,17 @@ section.introduction .btn:hover{
 }
 
 /* FORM / INPUTS CSS */
+.contact-container form .box{
+    width: 100%;
+    position: relative;
+}
+.contact-container form .box::after{
+    content: "*";
+    position: absolute;
+    right: .3rem;
+    top: .7rem;
+    color: red;
+}
 .contact-container form input, .contact-container form textarea{
     font-size: 1rem;
     margin: .7rem 0;
