@@ -22,6 +22,24 @@ html{
 }
 
 
+::-webkit-scrollbar{
+    background: var(--blue);
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    
+}
+::-webkit-scrollbar-thumb{
+    background: var(--lightgreen);
+}
+::-webkit-scrollbar-thumb:hover{
+    background: var(--second-light-green);
+}
+
+
+
+
+
 *{
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
