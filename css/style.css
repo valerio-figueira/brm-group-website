@@ -472,7 +472,6 @@ section.introduction .btn:hover{
     color: var(--blue);
     font-size: 1.4rem;
     line-height: 2.2rem;
-    padding-left: 2rem;
 }
 .company-container article.box .know-more{
     display: inline-block;
@@ -819,10 +818,10 @@ footer.footer-container .dev-info .icon{
         width: auto;
     }
     section.introduction .box h1, section.introduction .box h1 > span.destaque{
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
     section.introduction .box p{
-        font-size: 1.3rem;
+        font-size: 1rem;
         margin-top: 1rem;
     }
 
