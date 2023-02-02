@@ -88,7 +88,47 @@ p.paragraph span.destaque-2{
 }
 
 
-
+/* MESSAGES */
+.error-msg{
+    display: block;
+    width: fit-content;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    color: #84202a;
+    background-color: #f8d7da;
+    border-radius: 7px;
+    margin: .5rem 0;
+}
+.success-msg{
+    display: block;
+    width: fit-content;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    color: #0f5133;
+    background-color: #d1e7dd;
+    border-radius: 7px;
+    margin: .5rem 0;
+}
+.warning-msg{
+    display: block;
+    width: fit-content;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    color: #664d03;
+    background-color: #fff3cd;
+    border-radius: 7px;
+    margin: .5rem 0;
+}
+.alert-msg{
+    display: block;
+    width: fit-content;
+    padding: .5rem 1rem;
+    font-size: 1.2rem;
+    color: #075162;
+    background-color: #cff4fc;
+    border-radius: 7px;
+    margin: .5rem 0;
+}
 
 
 
@@ -554,7 +594,7 @@ section.introduction .btn:hover{
     top: .7rem;
     color: red;
 }
-.contact-container form input, .contact-container form textarea{
+.contact-container form input, .contact-container form textarea, .contact-container form select{
     font-size: 1rem;
     margin: .7rem 0;
     padding: 1rem;
@@ -562,6 +602,8 @@ section.introduction .btn:hover{
     border: none;
     border-radius: 8px;
     width: 100%;
+    background: var(--white);
+    color: #555;
 }
 .contact-container form input:focus, .contact-container form textarea:focus{
     outline: 2px solid var(--second-blue);

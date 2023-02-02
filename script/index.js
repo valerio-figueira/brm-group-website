@@ -1,3 +1,6 @@
+import sendMail from "./SendMail";
+
+
 setResponsiveNavbar();
 
 function setResponsiveNavbar(){
@@ -121,6 +124,7 @@ function createAnchor(string, url){
 
 
 
+
 if(document.querySelector("#contact")){
     const nameInput = document.querySelector("#nome");
     const regex = /[0-9]/;
@@ -143,7 +147,6 @@ if(document.querySelector("#contact")){
 
     // emmail form validation
     const emailInput = document.querySelector("#email");
-    const emailRegex = /[A-z]/;
 
     emailInput.addEventListener('keypress', (e) => {
         if(e.target.value.length > 40){
@@ -155,5 +158,23 @@ if(document.querySelector("#contact")){
         e.target.style.backgroundColor = whiteColor;
     })
 
-    
+
+
+    const form = document.querySelector("#contact-form");
+
+    // ADD LISTENER TO CONTACT FORM
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let mail = new FormData(form);
+
+        // SEND ELETRONIC MAIL
+        //sendMail(mail);
+    })
+
+
+
 }
+
+
+

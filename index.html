@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/41d6a358ff.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="script/index.js" defer></script>
+    <script src="script/index.js" defer type="module"></script>
 </head>
 <body>
     <header>
@@ -156,7 +156,7 @@
         </section>
 
         <section class="contact-container" id="contact">
-            <form action="#" method="POST">
+            <form action="#" method="POST" enctype="multipart/form-data" id="contact-form">
                 <h2 class="title">
                     <div class="tag-container">
                         <span class="tag">Consultoria</span>
@@ -171,6 +171,14 @@
                 </div>
                 <div class="box">
                     <input type="email" id="email" name="email" required placeholder="Digite seu email..." aria-label="Seu email" title="Digite seu e-mail aqui" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" minlength="12">
+                </div>
+                <div class="box">
+                    <select name="assunto" id="assunto">
+                        <option value="">Nos informe do assunto</option>
+                        <option value="consultoriaTec">Consultoria em soluções digitais</option>
+                        <option value="consultoriaCont">Consultoria em contabilidade</option>
+                        <option value="suporteTec">Suporte Técnico</option>
+                    </select>
                 </div>
                 <textarea id="message" rows="7" name="message" placeholder="Sua mensagem..." aria-label="Sua mensagem" maxlength="500"></textarea>
                 <button type="submit">Solicitar Contato</button>
