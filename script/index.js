@@ -1,5 +1,6 @@
 import sendMail from "./SendMail.js";
 import createServiceBox from "./ServicesContent.js";
+import createIntroductionText from "./CreateIntroduction.js";
 
 setResponsiveNavbar();
 
@@ -26,16 +27,25 @@ function addConditionalNavbar(nav){
 }
 
 
+// SET INTRODUCTION CONTENT
+if(document.querySelector(".about-container")){
+    createIntroductionText();
+}
+// SET SERVICES CONTENT
 const services = document.querySelector("#services");
 if(services){
     createServiceBox(services);
 }
 
+// SET FOOTER CONTENT
+setCopyrightAndDevInfo();
+
+
 
 
 // CREATE FIVE STAR SCORES
-const path = location.pathname;
 /*
+const path = location.pathname;
 if(path.match("/index.html")){
     const scoresContainer = document.querySelectorAll(".scores");
 
@@ -43,8 +53,6 @@ if(path.match("/index.html")){
         createFiveStarScore(container);
     })
 }
-*/
-
 function createFiveStarScore(container){
     const index = 5;
 
@@ -56,28 +64,12 @@ function createFiveStarScore(container){
 
     return container;
 }
-
-if(document.querySelector(".about-container")){
-    setIntroductionText();
-}
-
-
-function setIntroductionText(){
-    const container = document.querySelectorAll(".about-container .box");
-
-    container[0].children[1].innerHTML = `
-    A BRM Group foi criada pela necessidade de estruturar nossas <span class="destaque">soluções digitais</span> desenvolvidas para os clientes. A criação deste grupo forma um sólido conjunto de empresas que preza pela <span class="destaque">qualidade dos serviços</span> e <span class="destaque">suporte ao cliente</span>. Produzimos softwares sob demanda e personalizados para cada tipo de organização. Nossa equipe fornece soluções digitais que trazem melhor experiência a você cliente. Somos focados em nossos clientes, no suporte e na qualidade de serviços prestados. Conte com a BRM Group para o sucesso de seu negócio.
-    `;
-
-    container[1].children[1].innerHTML = `
-    Somos formados por princípios de integridade, ética e respeito ao ser humano. Nossos serviços são reconhecidos pela <span class="destaque">qualidade</span>, <span class="destaque">segurança</span> e <span class="destaque">agilidade</span> ao cliente. A BRM Group é composta por especialistas renomados na área de <span class="destaque">tecnologia</span>, <span class="destaque">soluções digitais</span> e <span class="destaque">contabilidade</span>. Desenvolvemos aplicações tecnológicas que dão segurança e que supram aos interesses de nossos clientes. Nós da <span class="destaque">BRM Group</span> temos amor pelo que fazemos.
-    `;
-}
+*/
 
 
 
 
-setCopyrightAndDevInfo()
+
 function setCopyrightAndDevInfo(){
     const container = document.querySelector(".copyright");
     const year = new Date().getFullYear();
