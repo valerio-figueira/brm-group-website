@@ -626,6 +626,40 @@ section.introduction .btn:hover{
 }
 
 
+/* LOADER SPINNER */
+.loader-container{
+    position: fixed;
+    top: 0; bottom: 0; left: 0; right: 0;
+    z-index: 1010;
+    background: #00000073;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 6px solid #555;
+    border-bottom-color: var(--lightgreen);
+
+    animation-name: rotation;
+    animation-iteration-count: infinite;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 
 /* FOOTER CSS */
