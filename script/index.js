@@ -8,7 +8,7 @@ window.addEventListener('load', loadedContent);
 function loaderFadeOut(){
     document.querySelector(".loader-wrapper").style.opacity = "0";
     document.body.style.overflowY = "scroll";
-    setInterval(() => {
+    setTimeout(() => {
         document.querySelector(".loader-wrapper").style.display = "none";
     }, 500)
 }
