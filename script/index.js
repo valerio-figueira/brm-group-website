@@ -1,9 +1,11 @@
-import sendMail from "./SendMail.js";
-import createServiceBox from "./ServicesContent.js";
-import createIntroductionText from "./CreateIntroduction.js";
-import CheckInput from "./CheckInput.js";
-import CheckForm from "./CheckForm.js";
-import MailMessage from "./MailMessage.js";
+import sendMail from "./services/SendMail.js";
+import createServiceBox from "./services/CreateServiceBox.js";
+import createIntroductionText from "./services/CreateIntroduction.js";
+import CheckInput from "./validation/CheckInput.js";
+import CheckForm from "./validation/CheckForm.js";
+import MailMessage from "./services/CreateMailMessage.js";
+import setCopyrightAndDevInfo from "./services/CreateFooter.js";
+import makeNavResponsive from "./services/MakeNavResponsive.js";
 
 document.body.style.overflowY = "hidden";
 window.addEventListener('load', loadedContent);
@@ -20,26 +22,7 @@ function loaderFadeOut(){
 function loadedContent(){
     loaderFadeOut();
 
-    setResponsiveNavbar();
-
-    function setResponsiveNavbar(){
-        const openNav = document.querySelector(".mobile-btn");
-        const closeNav = document.querySelector(".close-btn");
-        const nav = document.querySelector(".navbar");
-    
-        openNav.addEventListener("click", () => addConditionalNavbar(nav));
-    
-        closeNav.addEventListener("click", () => addConditionalNavbar(nav));
-    }
-    
-    function addConditionalNavbar(nav){
-        if(!nav.matches(".mobile")){
-            nav.classList.add("mobile");
-        } else{
-            nav.classList.remove("mobile");
-        }
-    }
-    
+    makeNavResponsive();
     
     // SET INTRODUCTION CONTENT
     if(document.querySelector(".about-container")) createIntroductionText();
@@ -51,57 +34,7 @@ function loadedContent(){
     // SET FOOTER CONTENT
     setCopyrightAndDevInfo();
     
-    
-    function setCopyrightAndDevInfo(){
-        const container = document.querySelector(".copyright");
-        const year = new Date().getFullYear();
-    
-        container.innerHTML = `BRM Group - Direitos autorais &copy; ${year}`;
-    
-        const developerTag = document.querySelector(".dev-info");
-    
-        const anchor = createAnchor("Valerio Figueira", "https://valerio-figueira.github.io/portfolio/");
-        const icon = createSpanTagIcon("fa fa-external-link-square");
-    
-        developerTag.innerHTML = `Desenvolvido por `;
-        
-        anchor.prepend(icon);
-        developerTag.appendChild(anchor);
-    
-    
-        const portfoliumLink = document.querySelector(".dev-info a");
-    
-        portfoliumLink.addEventListener("mouseout", () => {
-            portfoliumLink.firstElementChild.style.display = "none";
-        })
-    
-        portfoliumLink.addEventListener("mouseenter", () => {
-            portfoliumLink.firstElementChild.style.display = "inline";
-        })
-    }
-    
-    function createSpanTagIcon(iconString){
-        const icon = document.createElement("span");
-        icon.className = iconString + " icon";
-        icon.style.margin = "0 .3rem";
-    
-        return icon;
-    }
-    
-    function createAnchor(string, url){
-        const anchor = document.createElement("a");
-        anchor.innerHTML = string;
-        anchor.href = url;
-        anchor.rel = "external";
-        anchor.target = "_blank";
-    
-        return anchor;
-    }
-    
-    
-    
-    
-    
+    // CONTACT FORM CONFIG
     if(document.querySelector("#contact")){
         const form = document.querySelector("#contact-form");
         const nameInput = document.querySelector("#nome");
