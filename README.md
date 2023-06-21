@@ -20,25 +20,9 @@ O site do Group BRM foi desenvolvido utilizando as seguintes tecnologias:
 
 - CSS: Para estilizar o site e torná-lo visualmente atraente, foi utilizado CSS (Cascading Style Sheets). O CSS controla a aparência dos elementos HTML, incluindo cores, fontes, layouts e animações.
 
-
-## Contribuindo
-
-Se você estiver interessado em contribuir para o desenvolvimento do site do Group BRM, ficaremos felizes em receber suas sugestões e melhorias. Sinta-se à vontade para criar um fork deste repositório, fazer as modificações desejadas e enviar um pull request. Nossa equipe revisará suas contribuições e, se apropriado, as mesclará ao projeto principal.
-
-## Contato
-
-Para entrar em contato com o Group BRM ou obter mais informações sobre nossos serviços, você pode nos alcançar por meio dos seguintes canais:
-
-- Website: https://groupbrm.com.br
-- E-mail: contato@groupbrm.com.br
-- Telefone: +34 3116-1924
-
-
 ## Estrutura do Projeto
 
 O projeto do site do Group BRM possui a seguinte estrutura de diretórios e arquivos:
-
-### SITE
 
     ├── index.html
     ├── css
@@ -53,4 +37,18 @@ O projeto do site do Group BRM possui a seguinte estrutura de diretórios e arqu
     │   ├── apresentacao-960p.webm
     │   └── ...
     └── README.md
+
+
+## Contribuindo
+
+Se você estiver interessado em contribuir para o desenvolvimento do site do Group BRM, ficaremos felizes em receber suas sugestões e melhorias. Sinta-se à vontade para criar um fork deste repositório, fazer as modificações desejadas e enviar um pull request. Nossa equipe revisará suas contribuições e, se apropriado, as mesclará ao projeto principal.
+
+## Contato
+
+Para entrar em contato com o Group BRM ou obter mais informações sobre nossos serviços, você pode nos alcançar por meio dos seguintes canais:
+
+- Website: https://groupbrm.com.br
+- E-mail: contato@groupbrm.com.br
+- Telefone: +34 3116-1924
+
 
