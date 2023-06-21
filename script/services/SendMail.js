@@ -17,7 +17,7 @@ export default async function sendMail(mail) {
         MailMessage.createMessage("Marque o CAPTCHA antes de enviar sua mensagem", "warning-msg");
         Loader.stop();
     } else {
-        await fetch("https://brmgroup-appserver-cce7c7.netlify.app/send", {
+        await fetch("https://groupbrm-appserver.netlify.app/send", {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include',
