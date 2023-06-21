@@ -1,6 +1,9 @@
 import sendMail from "./SendMail.js";
 import createServiceBox from "./ServicesContent.js";
 import createIntroductionText from "./CreateIntroduction.js";
+import CheckInput from "./CheckInput.js";
+import CheckForm from "./CheckForm.js";
+import MailMessage from "./MailMessage.js";
 
 document.body.style.overflowY = "hidden";
 window.addEventListener('load', loadedContent);
@@ -24,13 +27,9 @@ function loadedContent(){
         const closeNav = document.querySelector(".close-btn");
         const nav = document.querySelector(".navbar");
     
-        openNav.addEventListener("click", () => {
-            addConditionalNavbar(nav);
-        })
+        openNav.addEventListener("click", () => addConditionalNavbar(nav));
     
-        closeNav.addEventListener("click", () => {
-            addConditionalNavbar(nav);
-        })
+        closeNav.addEventListener("click", () => addConditionalNavbar(nav));
     }
     
     function addConditionalNavbar(nav){
@@ -43,14 +42,11 @@ function loadedContent(){
     
     
     // SET INTRODUCTION CONTENT
-    if(document.querySelector(".about-container")){
-        createIntroductionText();
-    }
+    if(document.querySelector(".about-container")) createIntroductionText();
+
     // SET SERVICES CONTENT
     const services = document.querySelector("#services");
-    if(services){
-        createServiceBox(services);
-    }
+    if(services) createServiceBox(services);
     
     // SET FOOTER CONTENT
     setCopyrightAndDevInfo();
@@ -107,51 +103,36 @@ function loadedContent(){
     
     
     if(document.querySelector("#contact")){
-        const nameInput = document.querySelector("#nome");
-        const regex = /[0-9]/;
-        const redColor = "#ffcece";
-        const whiteColor = "#FFFFFF";
-    
-        // name form validation
-        nameInput.addEventListener('keypress', (e) => {
-            if(e.target.value.length > 40){
-                e.preventDefault();
-            }
-            if(regex.test(e.key)){
-                e.preventDefault();
-                nameInput.style.backgroundColor = redColor;
-            }
-        })
-        nameInput.addEventListener("focusout", (e) => {
-            e.target.style.backgroundColor = whiteColor;
-        })
-    
-        // emmail form validation
-        const emailInput = document.querySelector("#email");
-    
-        emailInput.addEventListener('keypress', (e) => {
-            if(e.target.value.length > 40){
-                e.preventDefault();
-            }
-        })
-    
-        emailInput.addEventListener("focusout", (e) => {
-            e.target.style.backgroundColor = whiteColor;
-        })
-    
-    
-    
         const form = document.querySelector("#contact-form");
+        const nameInput = document.querySelector("#nome");
+        const emailInput = document.querySelector("#email");
+        const messageInput = document.querySelector("#message");
+        const nameRegex = /^[a-zA-ZÀ-ÖØ-öø-ÿ\s']+$/u;
+        const emailRegex = /^[a-zA-Z0-9@._-]$/;
+    
+        if(nameInput) {
+            const checkNameInput = new CheckInput(nameInput, nameRegex, 40);
+            checkNameInput.validate();
+        }
+
+        if(emailInput) {
+            const checkEmailInput = new CheckInput(emailInput, emailRegex, 40);
+            checkEmailInput.validate();
+        }
     
         // ADD LISTENER TO CONTACT FORM
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+            MailMessage.deleteMessage();
+
+            const checkForm = new CheckForm(nameInput, emailInput, messageInput);
+            const isValid = checkForm.validate();
     
             let mail = new FormData(form);
     
             // SEND ELETRONIC MAIL AS MULTIPART/FORMDATA
-            sendMail(mail);
+            if(isValid) sendMail(mail);
+            else MailMessage.createMessage('Verifique seus dados ou mensagem', 'warning-msg');
         })
-    
     }
 }
