@@ -12,17 +12,19 @@ export default async function sendMail(mail) {
         message: mail.get('message'),
     }
 
-    await fetch("http://localhost:3000/send", {
+    await fetch("https://brmgroup-appserver-cce7c7.netlify.app/send", {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
         body: JSON.stringify(body)
-    }).then((response) => {
-        console.log(response)
-        MailMessage.createMessage("Sua mensagem foi enviada!", "alert-msg")
+    })
+    .then((response) => response.json())
+    .then(response => {
+        MailMessage.createMessage(response.message, "alert-msg")
         Loader.stop();
-    }).catch(error => {
-        console.error(error);
+    })
+    .catch(error => {
+        console.log(error);
         MailMessage.createMessage("Falha na conexão", "error-msg")
         Loader.stop();
     })
