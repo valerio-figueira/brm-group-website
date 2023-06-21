@@ -20,6 +20,8 @@ O site do Group BRM foi desenvolvido utilizando as seguintes tecnologias:
 
 - CSS: Para estilizar o site e torná-lo visualmente atraente, foi utilizado CSS (Cascading Style Sheets). O CSS controla a aparência dos elementos HTML, incluindo cores, fontes, layouts e animações.
 
+- NodeJS: Para receber os dados do formulário e redirecioná-los à conta de e-mail Group BRM.
+
 ## Estrutura do Projeto
 
 O projeto do site do Group BRM possui a seguinte estrutura de diretórios e arquivos:
