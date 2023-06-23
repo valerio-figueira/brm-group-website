@@ -6,6 +6,6 @@ export default function createIntroductionText(){
     `;
 
     container[1].children[1].innerHTML = `
-    Na <strong>BRM Group</strong>, colocamos <strong>nossos clientes</strong> no <strong>centro de tudo</strong> o que fazemos. Buscamos constantemente aprimorar nossas <strong>habilidades</strong> e <strong>conhecimentos</strong>, mantendo-nos atualizados com as tendências e <strong>avanços tecnológicos</strong> mais recentes. Assim, garantimos que nossos clientes estejam sempre um passo à frente da concorrência. Além de fornecer <strong>soluções tecnológicas</strong> de ponta, <strong>valorizamos</strong> o <strong>relacionamento</strong> com nossos clientes. Buscamos entender suas necessidades e desafios, trabalhando em parceria para alcançar objetivos comuns. 
+    Na <strong>BRM Group</strong>, colocamos <strong>nossos clientes</strong> no <strong>centro</strong> de tudo o que fazemos. Buscamos constantemente aprimorar nossas <strong>habilidades</strong> e <strong>conhecimentos</strong>, mantendo-nos atualizados com as tendências e <strong>avanços tecnológicos</strong> mais recentes. Assim, garantimos que nossos clientes estejam sempre um passo à frente da concorrência. Além de fornecer <strong>soluções tecnológicas</strong> de ponta, <strong>valorizamos</strong> o <strong>relacionamento</strong> com nossos clientes. Buscamos entender suas necessidades e desafios, trabalhando em parceria para alcançar objetivos comuns. 
     `;
 }
