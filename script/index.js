@@ -23,6 +23,7 @@ function loadedContent(){
     loaderFadeOut();
 
     makeNavResponsive();
+    window.addEventListener("scroll", handleScroll);
     
     // SET INTRODUCTION CONTENT
     if(document.querySelector(".about-container")) createIntroductionText();
@@ -67,5 +68,28 @@ function loadedContent(){
             if(isValid) sendMail(mail);
             else MailMessage.createMessage('Verifique seus dados ou mensagem', 'warning-msg');
         })
+    }
+}
+
+
+function handleScroll() {
+    // Get the navbar element
+    const navbar = document.querySelector("header");
+
+    // Get the offset position of the navbar
+    const sticky = navbar.offsetTop;
+
+    if (window.pageYOffset >= sticky) {
+        navbar.style.backgroundColor = "#17191dbb";
+        navbar.style.boxShadow = "10px 0px 10px 10px #00000044";
+    } else {
+        navbar.style.backgroundColor = "transparent";
+        navbar.style.boxShadow = "none";
+    }
+
+    /* Reset to default color */
+    if (window.pageYOffset === 0) {
+        navbar.style.backgroundColor = "transparent";
+        navbar.style.boxShadow = "none";
     }
 }
