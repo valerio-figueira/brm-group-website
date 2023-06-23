@@ -6,9 +6,9 @@ export default async function sendMail(mail) {
     MailMessage.deleteMessage();
 
     const body = {
-        nome: mail.get('nome'),
+        name: mail.get('name'),
         email: mail.get('email'),
-        assunto: mail.get('assunto'),
+        subject: mail.get('subject'),
         message: mail.get('message'),
         recaptchaResponse: mail.get('g-recaptcha-response')
     }
@@ -17,7 +17,7 @@ export default async function sendMail(mail) {
         MailMessage.createMessage("Marque o CAPTCHA antes de enviar sua mensagem", "warning-msg");
         Loader.stop();
     } else {
-        await fetch("https://groupbrm-appserver.netlify.app/send", {
+        await fetch("https://brm-group-serverside.vercel.app/send", {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             credentials: 'include',
