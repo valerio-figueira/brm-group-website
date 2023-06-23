@@ -10,6 +10,7 @@ export default async function sendMail(mail) {
         email: mail.get('email'),
         subject: mail.get('subject'),
         message: mail.get('message'),
+        recaptchaResponse: mail.get('g-recaptcha-response')
     }
 
     if (body.recaptchaResponse.length === 0) {
