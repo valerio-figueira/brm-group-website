@@ -23,7 +23,11 @@ function loadedContent(){
     loaderFadeOut();
 
     makeNavResponsive();
-    window.addEventListener("scroll", handleScroll);
+
+    const navbar = document.querySelector('header');
+    if(!navbar.querySelector('#work-with-us-navbar')) {
+        window.addEventListener("scroll", handleScroll);
+    }
     
     // SET INTRODUCTION CONTENT
     if(document.querySelector(".about-container")) createIntroductionText();
@@ -35,6 +39,10 @@ function loadedContent(){
     // SET FOOTER CONTENT
     setCopyrightAndDevInfo();
     
+    validateInputs();
+}
+
+function validateInputs() {
     // CONTACT FORM CONFIG
     if(document.querySelector("#contact")){
         const form = document.querySelector("#contact-form");
@@ -53,32 +61,34 @@ function loadedContent(){
             const checkEmailInput = new CheckInput(emailInput, emailRegex, 40);
             checkEmailInput.validate();
         }
-    
-        // ADD LISTENER TO CONTACT FORM
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            MailMessage.deleteMessage();
 
-            const checkForm = new CheckForm(nameInput, emailInput, messageInput);
-            const isValid = checkForm.validate();
-    
-            let mail = new FormData(form);
-    
-            // SEND ELETRONIC MAIL AS MULTIPART/FORMDATA
-            if(isValid) sendMail(mail);
-            else MailMessage.createMessage('Verifique seus dados ou mensagem', 'warning-msg');
-        })
+        ValidateAndSubmitForm(form, nameInput, emailInput, messageInput);
     }
+}
+
+function ValidateAndSubmitForm(form, nameInput, emailInput, messageInput) {
+    // ADD LISTENER TO CONTACT FORM
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        MailMessage.deleteMessage();
+
+        const checkForm = new CheckForm(nameInput, emailInput, messageInput);
+        const isValid = checkForm.validate();
+
+        let mail = new FormData(form);
+
+        // SEND ELETRONIC MAIL AS MULTIPART/FORMDATA
+        if(isValid) sendMail(mail);
+        else MailMessage.createMessage('Verifique seus dados ou mensagem', 'warning-msg');
+    })
 }
 
 
 function handleScroll() {
-    // Get the navbar element
-    const navbar = document.querySelector("header");
-
+    const navbar = document.querySelector('header');
     // Get the offset position of the navbar
     const sticky = navbar.offsetTop;
-
+    console.log("OK2")
     if (window.pageYOffset >= sticky) {
         navbar.style.backgroundColor = "#17191dbb";
         navbar.style.boxShadow = "10px 0px 10px 10px #00000044";
