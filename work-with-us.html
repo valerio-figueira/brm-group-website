@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Valerio Figueira">
+    <meta name="description" content="Soluções digitais para sua empresa, contabilidade, infraestrutura e sistemas únicos para impulsionar seu negócio.">
+    <meta name="robots" content="index, follow">
+    <title>Group BRM - Home</title>
+    <link rel="shortcut icon" href="./imgs/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/41d6a358ff.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./script/index.js" defer type="module"></script>
+    <script src="script/Utils/CurriculumForm.js" defer type="module"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body id="work-with-us-container">
+    <header id="work-with-us-navbar">
+        <div class="logo-container">
+            <a href="/index.html" target="_self" rel="follow">
+                <img src="imgs/logo.png" alt="Logo marca da Group BRM, Nós decolamos o seu negócio">
+            </a>
+        </div>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/index.html#about">Sobre</a>
+            <a href="/index.html#services">Serviços</a>
+            <a href="/index.html#contact">Contato</a>
+            <a href="/work-with-us.html">Trabalhe Conosco</a>
+            <button class="close-btn">&times;</button>
+        </nav>
+
+        <div class="box">
+            <a href="https://hellpsistemas.tomticket.com/" target="_blank" rel="external" class="login">Área Cliente</a>
+            <button class="fa fa-bars mobile-btn"></button>
+        </div>
+    </header>
+
+    <main class="container" id="work-with-us">
+        <form action="http://localhost:9292/curriculum" method="POST" enctype="multipart/form-data">
+            <h2 class="title">Envie-nos seu currículo:</h2>
+            <div class="box">
+                <input type="text" id="nome" name="name" required placeholder="Comece com seu nome..." aria-label="Seu nome" title="Digite seu nome aqui" minlength="10">
+            </div>
+            <div class="box">
+                <input type="email" id="email" name="email" required placeholder="Digite seu email..." aria-label="Seu email" title="Digite seu e-mail aqui" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" minlength="10">
+            </div>
+            <textarea id="message" rows="7" name="message" placeholder="Sua mensagem..." aria-label="Sua mensagem" maxlength="500"></textarea>
+            <div class="file-input-container">
+                <input type="file" name="file" id="file-input">
+                <label for="file-input" id="file-input-label">Selecione seu currículo...</label>
+            </div>
+            <p id="file-name-display"></p>
+            <div class="g-recaptcha" data-sitekey="6LerhbomAAAAAOLtv_Qn-bPLhmXaZxcev0hM5WzH"></div>
+            <button type="submit">Enviar currículo</button>
+        </form>
+    </main>
+
+    <footer class="footer-container">
+        <div class="contact-footer">
+            <div class="location box">
+                <span class="fa fa-thumb-tack icon"></span>
+                <a href="#">R. Tuiuti, 400 - Tabajaras | <span class="block">Uberlândia - MG, 38400-264</span></a>
+            </div>
+            <div class="mail box">
+                <span class="fa fa-envelope icon"></span>
+                <a href="mailto:contato@groupbrm.com.br" rel="external">contato@groupbrm.com.br</a>
+            </div>
+            <div class="phone box">
+                <span class="fas fa-phone-square-alt icon"></span>
+                <a href="tel:+553431161924" rel="external">+55 (34) 3116-1924</a>
+            </div>
+        </div>
+
+        <div class="social-media"></div>
+
+        <div class="copyright">
+            <!-- INSERTED DYNAMICALLY BY JAVASCRIPT -->
+        </div>
+
+        <div class="dev-info">
+            <!-- INSERTED DYNAMICALLY BY JAVASCRIPT -->
+        </div>
+    </footer>
+
+    <div class="loader-wrapper">
+        <span class="page-loader">
+            <span class="loader-inner"></span>
+        </span>
+    </div> 
+</body>
+</html>
