@@ -1064,3 +1064,119 @@ footer.footer-container .dev-info .icon{
         display: block;
     }
 }
+
+
+header#work-with-us-navbar {
+    position: relative;
+    background-color: var(--prime-color);
+    background: linear-gradient(to right, #001b3b, #005176);
+}
+#work-with-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+}
+#work-with-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--lightgray);
+    block-size: 100%;
+    padding: 5rem 0;
+}
+
+#work-with-us form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+}
+#work-with-us form h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--dark-blue);
+    margin-bottom: 1.5rem;
+}
+#work-with-us form input {
+    font-size: 1rem;
+    padding: .9rem;
+    margin: .5rem 0;
+    inline-size: 100%;
+    border: 2px solid transparent;
+    outline: none;
+}
+#work-with-us form input:hover {
+    border: 2px solid var(--second-blue);
+}
+#work-with-us form textarea#message {
+    padding: .9rem;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    outline: none;
+}
+#work-with-us form textarea#message:hover {
+    border: 2px solid var(--second-blue);
+}
+  
+#work-with-us form input[type="submit"] {
+    background-color: #005076;
+    color: #e3e3e3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#work-with-us form button {
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: var(--blue);
+    color: var(--lightgray);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: .3rem;
+    margin: 1rem 0;
+}
+#work-with-us form button:hover {
+    background-color: var(--color1);
+}
+#work-with-us form input[type="submit"]:hover {
+    background-color: var(--color1);
+}
+#work-with-us form input[type="file"] {
+    display: none;
+    padding: .9rem .3rem;
+    width: 100%;
+}
+.file-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 0;
+    color: #fff;
+}
+.file-input-container label {
+    width: 100%;
+    cursor: pointer;
+    background-color: var(--blue);
+    padding: .9rem 3rem;
+}
+.file-input-container label:hover{
+    background-color: var(--color1);
+}
+#work-with-us form .g-recaptcha {
+    margin: auto;
+}
+#file-input:focus + #file-input-label {
+    outline: 4px solid #ff0000;
+}
+#file-name-display {
+    padding: 0 0 1rem;
+    color: #303030;
+}
+#work-with-us form > p {
+    margin: 1rem auto 0;
+}
