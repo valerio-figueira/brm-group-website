@@ -5,9 +5,9 @@ export default async function sendMail(formData) {
     Loader.run();
     MailMessage.deleteMessage();
 
-    recaptcha = formData.get('recaptchaResponse');
+    const recaptcha = formData.get('g-recaptcha-response');
 
-    if (recaptcha.length === 0) {
+    if (recaptcha === null || recaptcha.length === 0) {
         MailMessage.createMessage("Marque o CAPTCHA antes de enviar sua mensagem", "warning-msg");
         Loader.stop();
     } else {
