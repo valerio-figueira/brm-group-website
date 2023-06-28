@@ -16,7 +16,7 @@ export default async function sendMail(formData) {
 }
 
 async function createRequest(formData) {
-    return fetch("http://localhost:9292/contact", {
+    return fetch("https://server.groupbrm.com.br/contact", {
         method: "POST",
         body: formData
     })

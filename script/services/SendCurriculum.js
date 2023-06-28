@@ -4,7 +4,6 @@ import CheckForm from "../validation/CheckForm.js";
 
 export default function addFormListener(form) {
     form.addEventListener('submit', (e) => {
-        console.log(form)
         e.preventDefault();
         CurriculumMessage.deleteMessage();
 
@@ -33,7 +32,7 @@ export async function sendCurriculum(formData) {
 }
 
 async function createRequest(formData) {
-    return fetch("http://localhost:9292/curriculum", {
+    return fetch("https://server.groupbrm.com.br/curriculum", {
         method: "POST",
         body: formData
     })
