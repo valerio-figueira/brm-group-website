@@ -1111,6 +1111,7 @@ header#work-with-us-navbar {
     border: 2px solid var(--second-blue);
 }
 #work-with-us form textarea#message {
+    resize: none;
     padding: .9rem;
     font-size: 1rem;
     border: 2px solid transparent;
