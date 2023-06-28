@@ -6,6 +6,8 @@ import CheckForm from "./validation/CheckForm.js";
 import MailMessage from "./services/CreateMailMessage.js";
 import setCopyrightAndDevInfo from "./services/CreateFooter.js";
 import makeNavResponsive from "./services/MakeNavResponsive.js";
+import { videos } from "./db/VideosPath.js";
+import RandomVideo from "./Utils/RandomVideo.js";
 
 document.body.style.overflowY = "hidden";
 window.addEventListener('load', loadedContent);
@@ -21,7 +23,7 @@ function loaderFadeOut(){
 
 function loadedContent(){
     loaderFadeOut();
-
+    new RandomVideo(videos).run();
     makeNavResponsive();
 
     const navbar = document.querySelector('header');
@@ -88,7 +90,6 @@ function handleScroll() {
     const navbar = document.querySelector('header');
     // Get the offset position of the navbar
     const sticky = navbar.offsetTop;
-    console.log("OK2")
     if (window.pageYOffset >= sticky) {
         navbar.style.backgroundColor = "#17191dbb";
         navbar.style.boxShadow = "10px 0px 10px 10px #00000044";
