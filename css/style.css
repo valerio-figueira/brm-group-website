@@ -287,7 +287,7 @@ section.introduction .box .tag-container{
 }
 .media-container::before{
     content: "";
-    background: #133141c5;
+    background: #133141cc;
     position: absolute;
     z-index: 15;
     top: 0; left: 0; bottom: 0; right: 0;
@@ -715,6 +715,18 @@ footer.footer-container .dev-info .icon{
 
 
 /* MEDIA QUERIES */
+@media screen and (max-width: 1580px) {
+    .media-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .media-container video{
+        height: 100%;
+        width: auto;
+    }
+}
 @media screen and (max-width: 1350px) {
     section.introduction .box{
         width: 70%;
@@ -724,6 +736,7 @@ footer.footer-container .dev-info .icon{
     .about-container{
         padding: 4rem 3%;
     }
+
 }
 @media screen and (max-width: 1250px) {
     .media-container{
@@ -1111,7 +1124,6 @@ header#work-with-us-navbar {
     border: 2px solid var(--second-blue);
 }
 #work-with-us form textarea#message {
-    resize: none;
     padding: .9rem;
     font-size: 1rem;
     border: 2px solid transparent;
