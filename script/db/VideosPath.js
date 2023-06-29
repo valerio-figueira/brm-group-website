@@ -10,7 +10,7 @@ export const videos = [
         webm: ['videos/heaven-at-night-540p.webm', 'videos/heaven-at-night-720p.webm']
     },
     {
-        mp4: ['videos/luzes-360p.mp4', 'videos/luzes-540p.mp4', 'videos/luzes-720p.mp4']
+        webm: ['videos/luzes-360p.webm', 'videos/luzes-540p.webm', 'videos/luzes-720p.webm']
     },
     {
         webm: ['videos/streets-at-night-360p.webm', 'videos/streets-at-night-540p.webm', 'videos/streets-at-night-720p.webm']
@@ -20,5 +20,8 @@ export const videos = [
     },
     {
         webm: ['videos/background-640p.webm', 'videos/background-960p.webm', 'videos/background-1280p.webm']
+    },
+    {
+        webm: ['videos/empresária-540p.webm', 'videos/empresária-720p.webm']
     }
 ]
