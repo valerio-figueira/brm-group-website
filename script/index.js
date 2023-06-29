@@ -11,6 +11,7 @@ import RandomVideo from "./Utils/RandomVideo.js";
 
 document.body.style.overflowY = "hidden";
 window.addEventListener('load', loadedContent);
+window.addEventListener('DOMContentLoaded', new RandomVideo(videos).run());
 
 function loaderFadeOut(){
     document.querySelector(".loader-wrapper").style.opacity = "0";
@@ -23,7 +24,6 @@ function loaderFadeOut(){
 
 function loadedContent(){
     loaderFadeOut();
-    new RandomVideo(videos).run();
     makeNavResponsive();
 
     const navbar = document.querySelector('header');

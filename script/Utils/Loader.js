@@ -1,5 +1,5 @@
 export default class Loader {
-    static run(element) {
+    static run() {
         const loaderContainer = document.createElement('div');
         loaderContainer.className = 'loader-container';
 
@@ -8,12 +8,9 @@ export default class Loader {
 
         loaderContainer.appendChild(spinner);
 
-        const container = document.querySelector(element)
-        if(container) container.appendChild(loaderContainer);
-        if(element.match('body')) {
-            document.body.style.height = '100vh';
-            document.body.style.overflow = 'hidden';
-        }
+        document.body.appendChild(loaderContainer);
+        document.body.style.height = '100vh';
+        document.body.style.overflow = 'hidden';
     }
 
     static stop() {

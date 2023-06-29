@@ -284,7 +284,6 @@ section.introduction .box .tag-container{
 
     height: 100vh;
     min-height: var(--min-height);
-    background-color: var(--prime-color);
 }
 .media-container::before{
     content: "";
