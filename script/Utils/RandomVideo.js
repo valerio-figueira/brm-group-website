@@ -7,7 +7,7 @@ export default class RandomVideo {
 
     run() {
         const randomVideo = Math.floor(Math.random() * this.videos.length);
-        Loader.run('.introduction')
+        Loader.run('.media-container')
         this.searchForVideoTypes(randomVideo)
     }
 
