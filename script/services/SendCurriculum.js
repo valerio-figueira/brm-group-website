@@ -18,7 +18,7 @@ export default function addFormListener(form) {
 }
 
 export async function sendCurriculum(formData) {
-    Loader.run();
+    Loader.run('body');
     CurriculumMessage.deleteMessage();
 
     const recaptcha = formData.get('g-recaptcha-response');

@@ -1,3 +1,5 @@
+import Loader from "./Loader.js";
+
 export default class RandomVideo {
     constructor(videos) {
         this.videos = videos;
@@ -5,6 +7,7 @@ export default class RandomVideo {
 
     run() {
         const randomVideo = Math.floor(Math.random() * this.videos.length);
+        Loader.run('.introduction')
         this.searchForVideoTypes(randomVideo)
     }
 
@@ -23,6 +26,7 @@ export default class RandomVideo {
             const element = this.createSourceElement(video, type);
             videoContainer.prepend(element);
         }
+        Loader.stop();
     }
 
     createSourceElement(src, type) {

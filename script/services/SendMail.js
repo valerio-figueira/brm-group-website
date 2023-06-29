@@ -2,7 +2,7 @@ import Loader from "../Utils/Loader.js";
 import MailMessage from "./CreateMailMessage.js";
 
 export default async function sendMail(formData) {
-    Loader.run();
+    Loader.run('body');
     MailMessage.deleteMessage();
 
     const recaptcha = formData.get('g-recaptcha-response');
